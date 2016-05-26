@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const del           = require('del');
 const eslint = require('gulp-eslint');
 const gulpWebserver = require('gulp-webserver');
 const jasmine = require('gulp-jasmine');
@@ -13,6 +14,18 @@ gulp.task('lint', function(){
 
 });
 
+//clean
+gulp.task('clean', function() {
+    console.log ('removing dist directory');
+    return del([
+        'dist'
+    ]);
+});
+
+//copy html files to dist
+gulp.task('copy', function() {
+    return gulp.src('src/*.html').pipe(gulp.dest('dist'));
+});
 gulp.task('specs', function (done) {
     gulp.src('spec/*.js')
         .pipe(jasmine({
@@ -39,6 +52,10 @@ gulp.task('run', function(done){
     done();
 });
 
+gulp.task('build', gulp.series('clean',gulp.parallel('webpack','copy'), 'run'), function(done){
+    console.log('Builded fine');
+    done();
+});
 gulp.task('default', gulp.series('lint', function (done) {
     console.log('Build ok');
     done();
