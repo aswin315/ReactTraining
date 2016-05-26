@@ -52,7 +52,7 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	exports.greet = function greet(name){
+	exports.greet = function(name){
 	 return 'Hello ' + name;
 	};
 

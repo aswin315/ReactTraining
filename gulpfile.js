@@ -7,8 +7,8 @@ const reporters = require('jasmine-reporters');
 const webpack = require('gulp-webpack');
 const karma = require('gulp-karma-runner');
 
-gulp.task('lint', function(){
-    return gulp.src(['**/*.js', '!node_modules/**'])
+gulp.task('eslint', function(){
+    return gulp.src(['**/*.js', '!dist', '!node_modules/**'])
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
@@ -83,7 +83,7 @@ gulp.task('build', gulp.series('clean',gulp.parallel('webpack','copy'), 'run'), 
     console.log('Builded fine');
     done();
 });
-gulp.task('default', gulp.series('lint', function (done) {
+gulp.task('default', gulp.series('eslint', function (done) {
     console.log('Build ok');
     done();
 })
