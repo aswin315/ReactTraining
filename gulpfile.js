@@ -25,8 +25,7 @@ gulp.task('clean', function() {
 
 gulp.task('karma', function () {
     return gulp.src([
-       'spec/**/*.js',
-       'src/**/*.js'
+       'spec/**/*.js'
     ],
         {'read': false})
         .pipe(karma.server({

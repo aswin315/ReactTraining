@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
 	var sayHello = __webpack_require__(1);
 	console.log(sayHello.greet('Ash'));
 
@@ -52,8 +53,10 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	exports.greet = function(name){
-	 return 'Hello ' + name;
+	'use strict';
+
+	exports.greet = function (name) {
+	  return 'Hello ' + name;
 	};
 
 /***/ }
