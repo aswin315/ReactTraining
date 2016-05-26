@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aswin315/ReactTraining/issues"
   },
-  "homepage": "https://github.com/aswin315/ReactTraining#readme"
+  "homepage": "https://github.com/aswin315/ReactTraining#readme",
+  "devDependencies": {
+    "gulp": "gulpjs/gulp#4.0"
+  }
 }
