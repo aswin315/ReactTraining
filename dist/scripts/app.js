@@ -46,8 +46,13 @@
 
 	'use strict';
 
-	var sayHello = __webpack_require__(1);
-	console.log(sayHello.greet('Ash'));
+	var _sayHello = __webpack_require__(1);
+
+	var _sayHello2 = _interopRequireDefault(_sayHello);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	console.log(_sayHello2.default.greet('Ash'));
 
 /***/ },
 /* 1 */

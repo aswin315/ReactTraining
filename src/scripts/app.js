@@ -1,3 +1,2 @@
-'use strict';
-var sayHello = require('./sayHello');
+import sayHello from './sayHello.js';
 console.log(sayHello.greet('Ash'));
