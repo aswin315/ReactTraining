@@ -1,4 +1,4 @@
-import sayHello from '../src/scripts/sayHello';
+import * as sayHello from '../src/scripts/sayHello.js';
 describe('Greeting', function(){
     it('returns hello', function () {
         var hello = sayHello.greet('my world');

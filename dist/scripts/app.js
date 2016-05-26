@@ -52,15 +52,16 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log(_sayHello2.default.greet('Ash'));
-
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
 
-	exports.greet = function (name) {
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var greet = exports.greet = function greet(name) {
 	  return 'Hello ' + name;
 	};
 

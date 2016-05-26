@@ -1,4 +1,3 @@
-'use strict';
-exports.greet = function(name){
+export let greet = (name) =>{
  return 'Hello ' + name;
 };
