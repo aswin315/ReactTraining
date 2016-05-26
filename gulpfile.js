@@ -3,6 +3,7 @@ const eslint = require('gulp-eslint');
 const gulpWebserver = require('gulp-webserver');
 const jasmine = require('gulp-jasmine');
 const reporters = require('jasmine-reporters');
+const webpack = require('gulp-webpack');
 
 gulp.task('lint', function(){
     return gulp.src(['**/*.js', '!node_modules/**'])
@@ -21,6 +22,12 @@ gulp.task('specs', function (done) {
             })
         }));
     done();
+});
+
+gulp.task('webpack', function(){
+    return gulp.src('src/scripts/app.js')
+        .pipe(webpack(require('./webpack.config.js')))
+        .pipe(gulp.dest('dist/scripts/'))
 });
 
 gulp.task('run', function(done){
