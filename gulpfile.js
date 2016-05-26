@@ -20,16 +20,16 @@ gulp.task('specs', function (done) {
                 color: true
             })
         }));
-    done()
-})
+    done();
+});
 
 gulp.task('run', function(done){
-    gulp.src('src')
+    gulp.src('dist')
         .pipe(gulpWebserver({
             livereload: true,
             open: true
         }));
-    done()
+    done();
 });
 
 gulp.task('default', gulp.series('lint', function (done) {
