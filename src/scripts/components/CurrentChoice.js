@@ -1,11 +1,5 @@
 import React from 'react'
-
-class CurrentChoice extends React.Component{
-    render(){
-        return(
-            <label>current choice is {this.props.text}</label>
-        );
-    }
+function CurrentChoice(props){
+    return(<div>Current Selection: {props.checked}</div>)
 }
-
 export default CurrentChoice;

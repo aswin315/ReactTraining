@@ -20,7 +20,7 @@ class RadioButtonGroup extends  React.Component{
         });
         return ( < div >
             {choiceItems}
-             <CurrentChoice text={this.props.checkedValue}/>
+             <CurrentChoice checked={this.props.checkedValue}/>
             < / div >
     )
         ;

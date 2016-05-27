@@ -1,20 +1,17 @@
 import React from 'react';
 import Header from '../components/Header.js';
 import Question from '../components/Question.js';
-import SubmitButton from '../components/SubmitButton.js'
-import RadioButtonGroup from '../components/RadioButtonGroup'
+import SubmitButton from '../components/SubmitButton.js';
+import RadioButtonGroup from '../components/RadioButtonGroup';
+import data from '../../data/data.json';
 
 class MainContainer extends React.Component{
     constructor(props){
         super(props);
         this.state ={
-            header: 'Welcome to the poll',
-            question: 'What is the best',
-            choices: [
-                {value: 'tachos', label: 'Tachos'},
-                {value: 'pizza', label: 'Pizza'},
-                {value: 'cheese', label: 'Cheese'}
-                ],
+            header: data.poll.header,
+            question: data.poll.questions[0].question,
+            choices: data.poll.questions[0].choices,
             checkedValue: ''
         }
         this.setCheckedValue = this.setCheckedValue.bind(this);
