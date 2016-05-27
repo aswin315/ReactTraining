@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header.js';
-import Question from './Question.js';
-import Answer from './Answer.js';
-import SubmitButton from './SubmitButton.js'
+import Header from '../components/Header.js';
+import Question from '../components/Question.js';
+import SubmitButton from '../components/SubmitButton.js'
+import RadioButtonGroup from '../components/RadioButtonGroup'
 
 class MainContainer extends React.Component{
     constructor(props){
@@ -10,10 +10,19 @@ class MainContainer extends React.Component{
         this.state ={
             header: 'Welcome to the poll',
             question: 'What is the best',
-            answer1: 'Tacos',
-            answer2: 'Pizza',
-            answer3: 'Cheese'
+            choices: [
+                {value: 'tachos', label: 'Tachos'},
+                {value: 'pizza', label: 'Pizza'},
+                {value: 'cheese', label: 'Cheese'}
+                ],
+            checkedValue: ''
         }
+        this.setCheckedValue = this.setCheckedValue.bind(this);
+    }
+    setCheckedValue(value){
+        this.setState({
+            checkedValue: value
+        });
     }
     render(){
         var rowStyle = {
@@ -31,9 +40,7 @@ class MainContainer extends React.Component{
             <div className="col-sm-4 col-sm-offset-4">
             <form>
             <Question question={this.state.question} />
-    <Answer id='answer1' text={this.state.answer1} />
-    <Answer id='answer2' text={this.state.answer2} />
-    <Answer id= 'answer3'text={this.state.answer3} />
+            <RadioButtonGroup name='answer' checkedValue = {this.state.checkedValue} choices ={this.state.choices} onChange ={this.setCheckedValue}/>
     <SubmitButton text='Go' />
         </form>
         </div>
