@@ -16,15 +16,31 @@ class MainContainer extends React.Component{
         }
     }
     render(){
+        var rowStyle = {
+            backgroundColor: '#dadada',
+            border: '1px solid black',
+            borderRadius: '6px',
+            padding: '10px'
+        };
         return(
-            <div>
-            <Header header={this.state.header}/>
-    <Question question={this.state.question}/>
-    <Answer id='answer_1' text={this.state.answer1}/>
-    <Answer id='answer_2' text={this.state.answer2}/>
-    <Answer id='answer_3' text={this.state.answer3}/>
-    <SubmitButton text='Go!'/>
-            </div>);
+            <div className="container">
+            <div className="jumbotron">
+            <Header header={this.state.header} />
+    </div>
+        <div className="row" style={rowStyle}>
+            <div className="col-sm-4 col-sm-offset-4">
+            <form>
+            <Question question={this.state.question} />
+    <Answer id='answer1' text={this.state.answer1} />
+    <Answer id='answer2' text={this.state.answer2} />
+    <Answer id= 'answer3'text={this.state.answer3} />
+    <SubmitButton text='Go' />
+        </form>
+        </div>
+        </div>
+
+        </div>
+    );
     }
 }
 

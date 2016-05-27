@@ -3,7 +3,7 @@
  class SubmitButton extends React.Component{
      render(){
          return(
-                 <div>
+                 <div className= 'btn btn-success'>
              <input type='submit' value={this.props.text}/>
              </div>
          );

@@ -20427,15 +20427,37 @@
 	    _createClass(MainContainer, [{
 	        key: 'render',
 	        value: function render() {
+	            var rowStyle = {
+	                backgroundColor: '#dadada',
+	                border: '1px solid black',
+	                borderRadius: '6px',
+	                padding: '10px'
+	            };
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                _react2.default.createElement(_Header2.default, { header: this.state.header }),
-	                _react2.default.createElement(_Question2.default, { question: this.state.question }),
-	                _react2.default.createElement(_Answer2.default, { id: 'answer_1', text: this.state.answer1 }),
-	                _react2.default.createElement(_Answer2.default, { id: 'answer_2', text: this.state.answer2 }),
-	                _react2.default.createElement(_Answer2.default, { id: 'answer_3', text: this.state.answer3 }),
-	                _react2.default.createElement(_SubmitButton2.default, { text: 'Go!' })
+	                { className: 'container' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'jumbotron' },
+	                    _react2.default.createElement(_Header2.default, { header: this.state.header })
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'row', style: rowStyle },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'col-sm-4 col-sm-offset-4' },
+	                        _react2.default.createElement(
+	                            'form',
+	                            null,
+	                            _react2.default.createElement(_Question2.default, { question: this.state.question }),
+	                            _react2.default.createElement(_Answer2.default, { id: 'answer1', text: this.state.answer1 }),
+	                            _react2.default.createElement(_Answer2.default, { id: 'answer2', text: this.state.answer2 }),
+	                            _react2.default.createElement(_Answer2.default, { id: 'answer3', text: this.state.answer3 }),
+	                            _react2.default.createElement(_SubmitButton2.default, { text: 'Go' })
+	                        )
+	                    )
+	                )
 	            );
 	        }
 	    }]);
@@ -20581,7 +20603,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'radio' },
 	                _react2.default.createElement(
 	                    'label',
 	                    null,
@@ -20635,7 +20657,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'btn btn-success' },
 	                _react2.default.createElement('input', { type: 'submit', value: this.props.text })
 	            );
 	        }
