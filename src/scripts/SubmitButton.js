@@ -1,12 +1,12 @@
  import React from 'react';
  
- class Button extends React.Component{
+ class SubmitButton extends React.Component{
      render(){
          return(
                  <div>
-             <input type='submit'/>Go!
+             <input type='submit' value={this.props.text}/>
              </div>
          );
      }
  }
- export default Button;
+ export default SubmitButton;

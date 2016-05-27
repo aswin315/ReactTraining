@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SayHello from './SayHello.js';
+import MainContainer from './MainContainer';
 
 ReactDOM.render(
-    <SayHello name='world'/>,
+    <MainContainer/>,
     document.getElementById('app')
 );
