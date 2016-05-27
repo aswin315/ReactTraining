@@ -1,14 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import sayHello from './sayHello.js';
-
-var SayHello = React.createClass({
-    render: function(){
-        return <h1>
-            Hello, {this.props.name}
-            </h1>;
-    }
-});
+import SayHello from './SayHello.js';
 
 ReactDOM.render(
     <SayHello name='world'/>,
