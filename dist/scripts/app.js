@@ -20373,7 +20373,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20407,31 +20407,40 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var MainContainer = function (_React$Component) {
-	   _inherits(MainContainer, _React$Component);
+	    _inherits(MainContainer, _React$Component);
 
-	   function MainContainer() {
-	      _classCallCheck(this, MainContainer);
+	    function MainContainer(props) {
+	        _classCallCheck(this, MainContainer);
 
-	      return _possibleConstructorReturn(this, Object.getPrototypeOf(MainContainer).apply(this, arguments));
-	   }
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MainContainer).call(this, props));
 
-	   _createClass(MainContainer, [{
-	      key: 'render',
-	      value: function render() {
-	         return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(_Header2.default, { header: 'Welcome' }),
-	            _react2.default.createElement(_Question2.default, { question: 'What is this question' }),
-	            _react2.default.createElement(_Answer2.default, { id: 'answer_1', text: 'Answer 1' }),
-	            _react2.default.createElement(_Answer2.default, { id: 'answer_2', text: 'Answer 2' }),
-	            _react2.default.createElement(_Answer2.default, { id: 'answer_3', text: 'Answer 3' }),
-	            _react2.default.createElement(_SubmitButton2.default, { text: 'Go!' })
-	         );
-	      }
-	   }]);
+	        _this.state = {
+	            header: 'Welcome to the poll',
+	            question: 'What is the best',
+	            answer1: 'Tacos',
+	            answer2: 'Pizza',
+	            answer3: 'Cheese'
+	        };
+	        return _this;
+	    }
 
-	   return MainContainer;
+	    _createClass(MainContainer, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_Header2.default, { header: this.state.header }),
+	                _react2.default.createElement(_Question2.default, { question: this.state.question }),
+	                _react2.default.createElement(_Answer2.default, { id: 'answer_1', text: this.state.answer1 }),
+	                _react2.default.createElement(_Answer2.default, { id: 'answer_2', text: this.state.answer2 }),
+	                _react2.default.createElement(_Answer2.default, { id: 'answer_3', text: this.state.answer3 }),
+	                _react2.default.createElement(_SubmitButton2.default, { text: 'Go!' })
+	            );
+	        }
+	    }]);
+
+	    return MainContainer;
 	}(_react2.default.Component);
 
 	exports.default = MainContainer;

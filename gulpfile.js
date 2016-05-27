@@ -82,6 +82,14 @@ gulp.task('build', gulp.series('clean',gulp.parallel('webpack','copy'), 'run'), 
     console.log('Builded fine');
     done();
 });
+
+
+//watch
+gulp.task('watch', function() {
+    gulp.watch(['src/**/*.js',
+        'src/*.html'],gulp.series('webpack','copy'));
+});
+
 gulp.task('default', gulp.series('eslint', function (done) {
     console.log('Build ok');
     done();

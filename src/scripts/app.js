@@ -3,6 +3,6 @@ import ReactDOM from 'react-dom';
 import MainContainer from './MainContainer';
 
 ReactDOM.render(
-    <MainContainer/>,
+    <MainContainer />,
     document.getElementById('app')
 );
